@@ -1,7 +1,7 @@
 import 'package:favorite_place/providers/user_places.dart';
 import 'package:favorite_place/screens/new_place.dart';
 import 'package:flutter/material.dart';
-import 'package:favorite_place/wedgits/places.dart';
+import 'package:favorite_place/wedgits/places_list.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FavoritePlacesScreen extends ConsumerWidget {
