@@ -1,14 +1,27 @@
+import 'package:favorite_place/providers/user_places.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NewPlace extends StatefulWidget {
-  const NewPlace({super.key});
+class NewPlaceScreen extends ConsumerStatefulWidget {
+  const NewPlaceScreen({super.key});
 
   @override
-  State<NewPlace> createState() => _NewPlaceState();
+  ConsumerState<NewPlaceScreen> createState() => _NewPlaceState();
 }
 
-class _NewPlaceState extends State<NewPlace> {
+class _NewPlaceState extends ConsumerState<NewPlaceScreen> {
   final _titleController = TextEditingController();
+
+  void _savePlace(){
+    final enteredTitle=_titleController.text;
+    
+    if(enteredTitle.isEmpty){
+      return;
+    }
+
+    ref.read(userPlacesProvider.notifier).addPlace(enteredTitle);
+    Navigator.of(context).pop();
+  }
 
   @override
   void dispose() {
@@ -36,7 +49,7 @@ class _NewPlaceState extends State<NewPlace> {
               controller: _titleController,
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: _savePlace,
               icon: const Icon(Icons.add),
               label: const Text('Add Item'),
             )
