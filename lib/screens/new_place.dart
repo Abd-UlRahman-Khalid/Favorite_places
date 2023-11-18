@@ -1,4 +1,5 @@
 import 'package:favorite_place/providers/user_places.dart';
+import 'package:favorite_place/wedgits/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -48,6 +49,9 @@ class _NewPlaceState extends ConsumerState<NewPlaceScreen> {
               ),
               controller: _titleController,
             ),
+            SizedBox(height: 16,),
+            ImageInPut(),
+            SizedBox(height: 16,),
             ElevatedButton.icon(
               onPressed: _savePlace,
               icon: const Icon(Icons.add),
