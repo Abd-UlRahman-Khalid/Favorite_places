@@ -27,6 +27,7 @@ class _NewPlaceState extends ConsumerState<NewPlaceScreen> {
   @override
   void dispose() {
     _titleController.dispose();
+    super.dispose();                                                                                                                                                                                                                                                                                                                                              
   }
 
   @override
