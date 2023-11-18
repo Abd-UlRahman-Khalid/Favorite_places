@@ -7,22 +7,29 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class FavoritePlacesScreen extends ConsumerWidget {
   const FavoritePlacesScreen({super.key});
 
-  
-
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    final userPlaces=ref.watch(userPlacesProvider);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final userPlaces = ref.watch(userPlacesProvider);
     return Scaffold(
         appBar: AppBar(
-          title:  Text('Your Places'),
+          title: Text('Your Places'),
           actions: [
             IconButton(
-                onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewPlaceScreen(),),);},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => NewPlaceScreen(),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.add))
           ],
         ),
-        body: Places(
-          places: userPlaces,
+        body: Padding(
+          padding: EdgeInsets.all(16),
+          child: Places(
+            places: userPlaces,
+          ),
         ));
   }
 }
