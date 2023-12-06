@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:favorite_place/models/place.dart';
 
 class PlaceDetailScreen extends StatelessWidget {
-  PlaceDetailScreen({super.key, required this.place});
+  const PlaceDetailScreen({super.key, required this.place});
 
   final Place place;
 

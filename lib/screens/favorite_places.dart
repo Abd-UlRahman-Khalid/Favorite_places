@@ -12,13 +12,13 @@ class FavoritePlacesScreen extends ConsumerWidget {
     final userPlaces = ref.watch(userPlacesProvider);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Your Places'),
+          title: const Text('Your Places'),
           actions: [
             IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => NewPlaceScreen(),
+                      builder: (context) => const NewPlaceScreen(),
                     ),
                   );
                 },
@@ -26,7 +26,7 @@ class FavoritePlacesScreen extends ConsumerWidget {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Places(
             places: userPlaces,
           ),
